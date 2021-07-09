@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <div id="app">
+         <header>
+             <!-- step 9.1 bind gambar -->
+             <img v-bind:src="gambar" alt="vue">
+             <h1 v-text="title"></h1>
+             <p>step cara menggunakan framewok vue js menampikan gambar</p>
+         </header>
+         <footer>
+             <p>copy right 2021</p>
+         </footer>
+     </div> 
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+     <script type="text/javascript">
+        const member ={
+            title:'Menampilkan Gambar',
+            detail:'Step cara menggunakan framework vue js menampilkan gambar',
+            gambar:'image/vue2.png'
+        }
+        const vm = new Vue({
+            el:'#app',
+            data:member
+        })
+    </script>
+</body>
+</html>

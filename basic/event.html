@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event DI VUE.JS</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1 v-text="titel" ></h1>
+            <img v-bind:src="gambar" alt="">
+            <p>Event di vue js layaknya dom pada javascrit dimana kita bisa membuat interaksi tiap komponen saat melakukan aksi</p>
+        </header>
+        <hr>
+            <h5>contoh kasus event</h5>
+            <!-- step 10.1 cara membuat event di vue js-->
+            <h4 v-text="bilangan" ></h4>
+            <p> ini adalaha bilangan {{infoBilangan}}</p>
+            <button v-on:click="handleClick()" >Di KLIK</button>
+        <hr>
+        <footer>
+            <p>copy right 2021</p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script type="text/javascript" >
+        // step 10.2 menambahakan data "bilangan" untuk direct binding bisa berjalan
+        const member={
+            titel:"Cara Menggunakan Event",
+            gambar:'image/vue2.png',
+            bilangan:1
+        }
+
+        const vm = new Vue({
+            el:'#app',
+            data:member,
+            methods:{
+                handleClick:function(){
+                    return this.bilangan++;
+                }
+            },
+            computed:{
+                infoBilangan:function(){
+                    if(this.bilangan % 2 === 0)
+                    {
+                        this.gambar ='image/vue.png';
+                       return 'genap';
+
+                    }else{
+                        this.gambar ='image/vue2.png'
+                        return "ganjil";
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

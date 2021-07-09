@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML</title>
+</head>
+<body>
+    <!-- step 1 -->
+    <div id="app">
+        <header>
+            <!-- step 3 cara menampilkan data  -->
+            <!-- step 3 cara membuat deafault data  agar tidak berubah dengan menambahkan v-once -->
+            <!-- step 4 cara menambahkan fun expresion dalam template string -->
+            <!-- <h1 v-once>{{ name.toUpperCase()    }}</h1> -->
+            <!-- step 5 cara menbahkan nilai boolean dan percabangan -->
+            <!-- <h1 v-once>{{ isactive ? 'success' : 'danger'}}</h1> -->
+            <!-- step 6 cara menggunakan method dalam template string -->
+            <!-- <h1 v-once>{{ getname()}}</h1> -->
+            <!-- step 7 cara menggunakan param -->
+            <h1>{{ getname()}}</h1>
+            <p>Teknologi Web Masa Kini</p>
+        </header>
+        
+        <footer id="footer">
+            <p>copy right 2021</p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script type="text/javascript">
+        const member ={
+            //   step 2 cara lain mengirim data any type data
+            //   step 5 cara menbahkan nilai boolean dan percabangan
+            name: "Pembalajaran Baru",
+            messsage: "Ini No Baru",
+            isactive:false
+        }
+        // step 1
+      const vm= new Vue({
+          el:'#app',
+          /* data:{
+            //   step 2 mengirim data any type data
+            name :"Pembalajaran Baru",
+            messsage:"Ini No Baru"
+          }, */
+          data:member,
+          methods:{
+              getname:function(){
+                  return 'ini adalah' + this.name
+              },
+              getUbahNama:function(ubahnama){
+                  this.name =ubahnama
+              }
+          }
+      })
+    </script>
+</body>
+</html>

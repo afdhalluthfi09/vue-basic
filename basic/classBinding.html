@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Binding Vue JS</title>
+    <style>
+        /* step 11.3 buat class bernama active */
+        .active{
+            background-color: salmon;
+            border: 1px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="app">
+        <header>
+            <img :src="gambar" alt="">
+            <h1 v-text="titel"></h1>
+            <p>Salaha satu fitur yang di tawarkan oleh  vue js binding kelas layaknya menggunakna 
+                jqery dimana kita bisa mendisable atau membuat active or inactive sebuah kelas.
+            </p>
+        </header>
+        <hr>
+        <h4>contoh kasus class binding</h4>
+        <!-- step 11.1 menambhakn direct bindig class pada button -->
+        <button :class="{active:menu === 'home'}" @click="menu ='home'">Home</button>
+        <button :class="{active:menu === 'contact'}" @click="menu ='contact'">Contact</button>
+        <button :class="{active:menu === 'about'}" @click="menu ='about'">About</button>
+        <hr>
+        <footer>
+            <p>copy right 2021</p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script type="text/javascript">
+        // step 11.2 menambhakan data default binding dengan nama "menu"
+        const member={
+            titel:"Belajar Binding Data",
+            gambar:'image/vue2.png',
+            menu:'home'
+        }
+        const vm =new Vue({
+            el:'#app',
+            data:member
+        })
+    </script>
+
+
+</body>
+</html>

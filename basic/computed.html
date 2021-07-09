@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        <header>
+            <!-- step 8.1 daftar dan menggunakan computed -->
+            <h1>{{namaLengkap}}</h1>
+            <p>Sebua method yang berasal Dari Luar Skop Vue</p>
+            <h3>{{bilangan}}</h5>
+            <p>bilangan ini adalah bilangan {{ infoBilangan }}</p>
+        </header>
+        
+        <footer>
+            <p>copy right 2021</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script type="text/javascript">
+        const member ={
+            title:"Belajar Computed",
+            message:"Computed Method Diluar dari Skop Vue",
+            qty:4,
+            nama_depan:'Afdhal',
+            nama_belakang:'luthfi',
+            bilangan:5,
+            info_genap:'genap',
+            info_ganjil:'ganjil'
+        }
+
+        const vm = new Vue({
+            el:'#app',
+            data:member,
+            computed:{
+                // step 8 cara menggunakan dan mendaftarkan computed
+                totalBayar:function(){
+                    return this.qty * 10000
+                },
+                namaLengkap:function(){
+                    return this.nama_depan + this.nama_belakang
+                },
+                infoBilangan:function(){
+                    if(this.bilangan % 2 === 0){
+                       return this.info_genap
+                    }else{
+                       return this.info_ganjil
+                    }
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>

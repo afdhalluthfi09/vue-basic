@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TWO WAY DATA BINDING</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <img :src="gambar" alt="">
+            <h1 v-text="titel"></h1>
+            <p>Membuat realtime input review </p>
+        </header>
+        <hr>
+        <div>
+            <h4>Contoh Kasus TWO WAY DATA BINDING</h4>
+            <p>Buat Inputan yang Bisa mengubah judul Utama</p>
+            <!-- step 12.1 membuat attribut v-model untuk menjalankan two way data bindning -->
+            <input type="text"  v-model="titel"><br>
+            <p>two way data binding dalam chekbox </p>
+            <p v-text="kelas"></p>
+            <div>
+                <label><input type="checkbox" name="bahasa" v-model="kelas" value="vue.js" >Vue JS</label>
+                <label><input type="checkbox" name="bahasa" v-model="kelas" value="react.js" >REACT JS</label>
+                <label><input type="checkbox" name="bahasa" v-model="kelas" value="nuxt.js" >NUXT JS</label>
+                
+                
+                
+            </div>
+        
+        </div>
+        <hr>
+        <footer>
+            <p>copy right 2021</p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script type="text/javascript" >
+        // step 12.2 menambahkan data dengan nama kelas yang type datanya adalah array
+        const member ={
+            titel:'BELAJAR TWO WAY DATA BINDING',
+            gambar:'image/vue.png',
+            kelas:[]
+
+        }    
+        const vm = new Vue({
+            el:'#app',
+            data:member
+        })
+    </script>
+</body>
+</html>
